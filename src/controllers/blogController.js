@@ -26,12 +26,12 @@ const createBlog = async function (req, res) {
         if (!authorData)
             return res.status(400).send({ status: false, msg: "Enter valid author ID" })
 
-        if (data.isPublished)
+        if (data.isPublished == true)
             data["publishedAt"] = new Date();
 
         const createdBlog = await blogsModel.create(data)
 
-        res.status(200).send({ status: true, msg: createdBlog })
+        res.status(201).send({ status: true, msg: createdBlog })
     }
     catch (error) {
         res.status(400).send({ status: false, msg: error.message })

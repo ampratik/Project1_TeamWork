@@ -9,9 +9,9 @@ const mongoose = require('mongoose');
 
 const autherSchema = new mongoose.Schema({
 
-    firstName: { type: String, required: true },
+    fname: { type: String, required: true },
 
-    lastName: { type: String, required: true },
+    lname: { type: String, required: true },
 
     title: { type: String, required: true, enum: ["Mr", "Mrs", "Miss"] },
 

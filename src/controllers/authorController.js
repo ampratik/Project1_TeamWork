@@ -10,9 +10,9 @@ const createAuther = async function (req, res) {
   try {
     const data = req.body
 
-    if (!data.firstName) return res.status(400).send({ status: false, msg: " firstName is not present" })
+    if (!data.fname) return res.status(400).send({ status: false, msg: " firstName is not present" })
 
-    if (!data.lastName) return res.status(400).send({ status: false, msg: " lastName is not present" })
+    if (!data.lname) return res.status(400).send({ status: false, msg: " lastName is not present" })
 
     if (!data.title) return res.status(400).send({ status: false, msg: " title is not present" })
 
@@ -33,7 +33,7 @@ const createAuther = async function (req, res) {
 //### POST /login
 const loginUser = async function (req, res) {
   try {
-    let userName = req.body.emailId;
+    let userName = req.body.email;
     let password = req.body.password;
 
     if (!userName) return res.status(400).send({ status: false, msg: "please enter the emailId" })
