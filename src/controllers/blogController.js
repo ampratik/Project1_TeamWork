@@ -141,13 +141,13 @@ const deleteBlogBy = async function (req, res) {
         let body = req.query
         body.isDeleted = false
 
-        let auth2 = req.auth1
-        console.log(auth2);
+       // let auth2 = req.auth1
+        //console.log(auth2);
 
         let result = await blogsModel.updateMany(body, { $set: { isDeleted: true, deletedAt: new Date() } }, { new: true, upsert: true })
 
         res.status(200).send({ status: true, data: result })
-    }
+cd    }
     catch (error) {
         res.status(500).send({ status: false, msg: error.message })
     }
